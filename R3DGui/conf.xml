@@ -1,0 +1,86 @@
+<?xml version="1.0" ?>
+<file>
+  <method>
+
+    <BirkysNormalSegmentation>
+      <OMPNumberOfCores>4</OMPNumberOfCores>
+      <NENumberOfNeighbours>100</NENumberOfNeighbours>
+      <NumberOfDominantRegions>3</NumberOfDominantRegions>
+      <HistogramDeletionArea>30</HistogramDeletionArea>
+      <GRNumberOfNeighbours>10</GRNumberOfNeighbours>
+      <PointColorThreshold>0</PointColorThreshold>
+      <MinClusterSize>600</MinClusterSize>
+      <NumberOfPlains>6</NumberOfPlains>
+      <DistanceThreshold>0.01</DistanceThreshold>
+      <PointsPerHalfSphere>5000</PointsPerHalfSphere>
+      <!-- Giving the precision during dominant normals determination -->
+      <DominantNormalsSearchRadius>0.25</DominantNormalsSearchRadius>
+    </BirkysNormalSegmentation>
+
+    <AnalyticalPlanesReconstruction>
+      <KDTreeSearch>50</KDTreeSearch>
+      <!-- default = 200 -->
+      <MinClusterSize>200</MinClusterSize>
+      <!-- default =  1000000 -->
+      <MaxClusterSize>1000000</MaxClusterSize>
+      <!-- default = 50 -->
+      <NumberOfNeighbours>10</NumberOfNeighbours>
+      <SmoothnessThreshold>3.0</SmoothnessThreshold>
+      <CurvatureThreshold>0.3</CurvatureThreshold>
+      <DistanceThreshold>0.0001</DistanceThreshold>
+      <Probability>0.6</Probability>
+      <RanSACLine>0.01</RanSACLine>
+      <DispersionIterations>100</DispersionIterations>
+      <NumberOfThreads>4</NumberOfThreads>
+      <OrderingAlpha>10.0</OrderingAlpha>
+      <ConcaveAlpha>0.1</ConcaveAlpha>
+      <!-- For synthetic data it's better to use 10, for real 18-22 -->
+      <CornerRadiusMultiplicator>15</CornerRadiusMultiplicator>
+      <PlaneBorderThreshold>18</PlaneBorderThreshold>
+      <FilterAngle1>3</FilterAngle1>
+      <FilterAngle2>15</FilterAngle2>
+      <!-- For data preprocessing, to find sigma of sensor and data robustness -->
+      <DataPreprocessing>
+        <!-- default parameters are set in header -->
+        <DistanceThreshold>0.01</DistanceThreshold>
+        <Sigma>0.1</Sigma>
+        <NumberOfThreads>4</NumberOfThreads>
+        <LineCheckoutStep>50</LineCheckoutStep>
+        <AngularCoefficientMax>3.0</AngularCoefficientMax>
+        <LinearRepetitions>10</LinearRepetitions>
+        <PlaneIdentificationThreshold>0.5</PlaneIdentificationThreshold>
+      </DataPreprocessing>
+    </AnalyticalPlanesReconstruction>
+
+    <OutlierSegmentation>
+      <InliersDistanceParameter>4.5</InliersDistanceParameter>
+      <OutliersSearchRadiusParameter>1.5</OutliersSearchRadiusParameter>
+      <FilterMeanK>10.0</FilterMeanK>
+      <FilterStDevMulTresh>1.5</FilterStDevMulTresh>
+      <GRNumberOfNeighbours>10</GRNumberOfNeighbours>
+      <GRColorThreshold>0.0</GRColorThreshold>
+      <GRMinClusterSize>10</GRMinClusterSize>
+    </OutlierSegmentation>
+
+    <NumeroUnoReconstruction>
+    </NumeroUnoReconstruction>
+
+    <SlicBasedSegmentation>
+      <OMPNumberOfCores>4</OMPNumberOfCores>
+      <NENumberOfNeighbours>100</NENumberOfNeighbours>
+      <GridSize>0.4</GridSize>
+      <SuperpointCompactness>4.0</SuperpointCompactness>
+      <!-- 1 is the minimum number of iterations -->
+      <NumberOfIterations>5</NumberOfIterations>
+    </SlicBasedSegmentation>
+
+    <CloudRotationTest>
+    </CloudRotationTest>
+
+    <NoiseRemover>
+      <MeanK>11</MeanK>
+      <StddevMulThresh>1.6</StddevMulThresh>
+    </NoiseRemover>
+
+  </method>
+</file>
